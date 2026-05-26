@@ -5,11 +5,12 @@ import { servicesAPI, testimonialsAPI } from '../api/apiClient'
 import { useFetch } from '../hooks/useFetch'
 import ServiceCard from '../components/ui/ServiceCard'
 import TestimonialsCarousel from '../components/ui/TestimonialsCarousel'
+import AnimatedCounter from '../components/ui/AnimatedCounter'
 
 const STATS = [
-  { icon: FaBuilding, value: '+1.200', label: 'Empresas atendidas' },
-  { icon: FaUsers,    value: '+50',    label: 'Expertos disponibles' },
-  { icon: FaTrophy,   value: '15+',    label: 'Años de experiencia' },
+  { icon: FaBuilding, to: 1200, suffix: '+', label: 'Empresas atendidas' },
+  { icon: FaUsers,    to: 50,   suffix: '+', label: 'Expertos disponibles' },
+  { icon: FaTrophy,   to: 15,   suffix: '+', label: 'Años de experiencia' },
 ]
 
 const FEATURES = [
@@ -70,13 +71,15 @@ export default function HomePage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            {STATS.map(({ icon: Icon, value, label }) => (
+            {STATS.map(({ icon: Icon, to, suffix, label }) => (
               <div key={label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center md:text-left flex md:flex-row flex-col md:items-center gap-4">
                 <div className="w-12 h-12 bg-accent-500/20 rounded-xl flex items-center justify-center shrink-0 mx-auto md:mx-0">
                   <Icon className="text-accent-400 text-xl" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-display text-3xl font-bold text-white">{value}</p>
+                  <p className="font-display text-3xl font-bold text-white">
+                  <AnimatedCounter to={to} suffix={suffix} />
+                  </p>
                   <p className="text-primary-300 text-sm">{label}</p>
                 </div>
               </div>
