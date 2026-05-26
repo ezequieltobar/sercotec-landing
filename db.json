@@ -1,0 +1,140 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Diagnóstico Empresarial",
+      "description": "Evaluamos el estado actual de tu negocio identificando fortalezas, debilidades y oportunidades de mejora mediante metodologías probadas.",
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80",
+      "category": "Preventivo",
+      "icon": "FaChartLine"
+    },
+    {
+      "id": 2,
+      "title": "Asesoría Financiera",
+      "description": "Orientación especializada en gestión financiera, flujo de caja, acceso a financiamiento y planificación presupuestaria para tu empresa.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
+      "category": "Gestión",
+      "icon": "FaMoneyBillWave"
+    },
+    {
+      "id": 3,
+      "title": "Marketing Digital",
+      "description": "Estrategias digitales personalizadas: redes sociales, posicionamiento web, publicidad online y construcción de marca para crecer en el entorno digital.",
+      "image": "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&q=80",
+      "category": "Crecimiento",
+      "icon": "FaBullhorn"
+    },
+    {
+      "id": 4,
+      "title": "Innovación y Procesos",
+      "description": "Incorporamos herramientas digitales y optimizamos tus procesos operativos para aumentar la productividad y reducir costos de tu negocio.",
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
+      "category": "Eficiencia",
+      "icon": "FaCogs"
+    },
+    {
+      "id": 5,
+      "title": "Talleres de Capacitación",
+      "description": "Programas formativos especializados en administración, ventas, liderazgo y emprendimiento, diseñados para microempresarios y emprendedores.",
+      "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80",
+      "category": "Formación",
+      "icon": "FaGraduationCap"
+    },
+    {
+      "id": 6,
+      "title": "Vinculación Empresarial",
+      "description": "Networking estratégico, articulación con instituciones públicas y privadas, y acceso a programas de financiamiento y redes de apoyo.",
+      "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80",
+      "category": "Networking",
+      "icon": "FaHandshake"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "María González",
+      "company": "Panadería Artesanal Don Pedro",
+      "role": "Propietaria",
+      "text": "Gracias al Centro de Negocios pude ordenar mis finanzas y duplicar mis ventas en 6 meses. El apoyo fue fundamental para profesionalizar mi negocio.",
+      "avatar": "https://i.pravatar.cc/100?img=5",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Carlos Muñoz",
+      "company": "TechFix Soluciones",
+      "role": "Fundador",
+      "text": "El asesoramiento en marketing digital transformó mi empresa. Pasé de depender del boca a boca a tener una presencia digital sólida que genera clientes constantemente.",
+      "avatar": "https://i.pravatar.cc/100?img=12",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Ana Rojas",
+      "company": "Moda Sustentable AR",
+      "role": "Diseñadora y CEO",
+      "text": "Los talleres de capacitación me dieron las herramientas para gestionar mejor mi equipo y mejorar mis procesos. Recomiendo ampliamente sus servicios.",
+      "avatar": "https://i.pravatar.cc/100?img=9",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Roberto Silva",
+      "company": "Consultora Silva & Asociados",
+      "role": "Director",
+      "text": "La vinculación empresarial que nos proporcionó SERCOTEC nos abrió puertas que nunca hubiésemos conseguido solos. Excelente red de contactos y apoyo profesional.",
+      "avatar": "https://i.pravatar.cc/100?img=15",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "question": "¿Quiénes pueden acceder a los servicios del Centro de Negocios?",
+      "answer": "Pueden acceder micro, pequeñas y medianas empresas (MiPyMEs) con actividad comercial vigente en la Región Metropolitana. También emprendedores en etapa inicial con un proyecto de negocio estructurado."
+    },
+    {
+      "id": 2,
+      "question": "¿Cuál es el costo de los servicios?",
+      "answer": "La mayoría de nuestros servicios son gratuitos o de bajo costo, ya que son financiados por SERCOTEC. Algunos programas especializados pueden tener un costo de co-financiamiento que se informa previamente."
+    },
+    {
+      "id": 3,
+      "question": "¿Cómo puedo agendar una consulta?",
+      "answer": "Puedes agendar una consulta completando el formulario de contacto en nuestro sitio web, llamando directamente a nuestra oficina o visitándonos en Manuel Rodríguez Sur 749, Santiago (Metro Toesca)."
+    },
+    {
+      "id": 4,
+      "question": "¿Cuánto tiempo dura el acompañamiento empresarial?",
+      "answer": "La duración varía según el programa y las necesidades de cada empresa. Los acompañamientos preventivos pueden ser de 3 a 12 meses, mientras que las asesorías puntuales pueden resolverse en 1 a 3 sesiones."
+    },
+    {
+      "id": 5,
+      "question": "¿Ofrecen servicios online o solo presencial?",
+      "answer": "Ofrecemos servicios tanto presenciales en nuestra oficina de Santiago como modalidad online mediante videollamadas, facilitando el acceso a empresarios de distintas zonas."
+    }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name": "Verónica Castillo",
+      "role": "Directora Ejecutiva",
+      "bio": "Especialista en desarrollo empresarial con más de 15 años de experiencia apoyando MiPyMEs.",
+      "avatar": "https://i.pravatar.cc/150?img=47"
+    },
+    {
+      "id": 2,
+      "name": "Ignacio Pérez",
+      "role": "Asesor Financiero Senior",
+      "bio": "Ingeniero Comercial con MBA, experto en planificación financiera para pequeñas empresas.",
+      "avatar": "https://i.pravatar.cc/150?img=60"
+    },
+    {
+      "id": 3,
+      "name": "Camila Torres",
+      "role": "Especialista en Marketing Digital",
+      "bio": "Experta en estrategias digitales, con enfoque en el crecimiento de marcas emergentes.",
+      "avatar": "https://i.pravatar.cc/150?img=44"
+    }
+  ]
+}

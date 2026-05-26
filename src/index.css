@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-body text-neutral-800 bg-white antialiased;
+  }
+  h1, h2, h3 { @apply font-display; }
+  
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg
+           hover:bg-primary-700 active:bg-primary-800 transition-colors duration-200 focus:outline-none
+           focus:ring-2 focus:ring-primary-400 focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border-2 border-primary-600 text-primary-600 font-semibold
+           px-6 py-3 rounded-lg hover:bg-primary-50 transition-colors duration-200 focus:outline-none
+           focus:ring-2 focus:ring-primary-400 focus:ring-offset-2;
+  }
+  .btn-accent {
+    @apply inline-flex items-center gap-2 bg-accent-500 text-white font-semibold px-6 py-3 rounded-lg
+           hover:bg-accent-600 transition-colors duration-200 focus:outline-none
+           focus:ring-2 focus:ring-accent-400 focus:ring-offset-2;
+  }
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-bold text-primary-800 mb-3;
+  }
+  .section-subtitle {
+    @apply text-neutral-600 text-lg max-w-2xl;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300;
+  }
+  .form-input {
+    @apply w-full border border-neutral-300 rounded-lg px-4 py-3 text-neutral-800 text-sm
+           focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent
+           transition-all duration-200 bg-white;
+  }
+  .form-label {
+    @apply block text-sm font-semibold text-neutral-700 mb-1;
+  }
+  .form-error {
+    @apply text-red-500 text-xs mt-1;
+  }
+}
+
+/* Swiper overrides */
+.swiper-pagination-bullet-active { background: theme('colors.primary.600') !important; }
+.swiper-button-next, .swiper-button-prev { color: theme('colors.primary.600') !important; }
+
+/* Fix Swiper — todos los slides con igual ancho */
+.swiper-slide {
+  height: auto !important;
+}
