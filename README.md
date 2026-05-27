@@ -51,6 +51,7 @@ pnpm preview
 
 ## 🗂️ Estructura del proyecto
 
+```
 sercotec-landing/
 ├── public/
 │   └── images/                    # Imágenes estáticas optimizadas
@@ -89,6 +90,7 @@ sercotec-landing/
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
+```
 
 ---
 
