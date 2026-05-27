@@ -1,22 +1,25 @@
 # Centro de Negocios Santiago — SERCOTEC · Landing Page
 
 > Landing page desarrollada con **React + Vite + Tailwind CSS** como evaluación sumativa U3 — Desarrollo Frontend.
+> Instituto Profesional San Sebastián · 2026
 
 ---
 
 ## 🚀 Inicio rápido
 
 ### Requisitos previos
+
 > ⚠️ Este proyecto usa **pnpm** como gestor de paquetes. No usar npm ni yarn.
 >
 > Instalar pnpm: `npm install -g pnpm` o `corepack enable`
+
 - Node.js ≥ 18
-- npm ≥ 9
+- pnpm ≥ 8
 
 ### Instalación
 
 ```bash
-git clone https://github.com/<tu-usuario>/sercotec-landing.git
+git clone https://github.com/ezequieltobar/sercotec-landing.git
 cd sercotec-landing
 pnpm install
 ```
@@ -48,44 +51,44 @@ pnpm preview
 
 ## 🗂️ Estructura del proyecto
 
-```
 sercotec-landing/
 ├── public/
-│   └── images/                  # Imágenes estáticas optimizadas
+│   └── images/                    # Imágenes estáticas optimizadas
 ├── src/
 │   ├── api/
-│   │   └── apiClient.js         # Axios client + endpoints por recurso
+│   │   └── apiClient.js           # Axios client + endpoints por recurso
 │   ├── components/
 │   │   ├── layout/
-│   │   │   ├── Navbar.jsx       # Navegación principal responsive y accesible
-│   │   │   └── Footer.jsx       # Pie de página
-│   │   ├── sections/            # (reservado para secciones reutilizables)
+│   │   │   ├── Navbar.jsx         # Navegación principal responsive y accesible
+│   │   │   └── Footer.jsx         # Pie de página
 │   │   └── ui/
-│   │       ├── ServiceCard.jsx         # Tarjeta de servicio reutilizable
-│   │       ├── TestimonialsCarousel.jsx # Carrusel Swiper accesible
-│   │       ├── FAQAccordion.jsx        # Acordeón de preguntas frecuentes
-│   │       └── ContactForm.jsx         # Formulario con validación Zod
-│   ├── context/                 # (reservado para Context API global)
-│   ├── data/                    # (reservado para datos estáticos)
+│   │       ├── AnimatedCounter.jsx    # Contador numérico animado con IntersectionObserver
+│   │       ├── ContactForm.jsx        # Formulario con validación Zod y honeypot
+│   │       ├── FAQAccordion.jsx       # Acordeón de preguntas frecuentes accesible
+│   │       ├── OptimizedImage.jsx     # Imagen con lazy loading y skeleton
+│   │       ├── ScrollToTop.jsx        # Botón flotante para volver al inicio
+│   │       ├── ServiceCard.jsx        # Tarjeta de servicio reutilizable
+│   │       └── TestimonialsCarousel.jsx # Carrusel Swiper accesible y responsive
 │   ├── hooks/
-│   │   └── useFetch.js          # Hook genérico para llamadas a la API
+│   │   └── useFetch.js            # Hook genérico para llamadas a la API
 │   ├── pages/
-│   │   ├── HomePage.jsx
-│   │   ├── AboutPage.jsx
-│   │   ├── ServicesPage.jsx
-│   │   ├── FAQPage.jsx
-│   │   └── ContactPage.jsx
+│   │   ├── HomePage.jsx           # Página de inicio
+│   │   ├── AboutPage.jsx          # Página nosotros
+│   │   ├── ServicesPage.jsx       # Página de servicios
+│   │   ├── FAQPage.jsx            # Página de preguntas frecuentes
+│   │   └── ContactPage.jsx        # Página de contacto
 │   ├── utils/
-│   │   └── sanitize.js          # Sanitización de inputs y honeypot
-│   ├── App.jsx                  # Router principal
-│   ├── index.css                # Estilos globales + Tailwind
-│   └── main.jsx                 # Entry point
-├── db.json                      # Mock API (JSON Server)
-├── .env                         # Variables de entorno
+│   │   └── sanitize.js            # Sanitización de inputs y honeypot
+│   ├── App.jsx                    # Router principal con lazy loading
+│   ├── index.css                  # Estilos globales + Tailwind
+│   └── main.jsx                   # Entry point
+├── db.json                        # Mock API (JSON Server)
+├── .env                           # Variables de entorno
+├── BUENAS_PRACTICAS.md            # Guía de buenas prácticas
+├── RETROSPECTIVA.md               # Acta de retrospectiva Sprint 1
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
-```
 
 ---
 
@@ -109,19 +112,19 @@ import ServiceCard from './components/ui/ServiceCard'
 
 **Props:**
 
-| Prop          | Tipo     | Descripción                        |
-|---------------|----------|------------------------------------|
-| `id`          | number   | ID único del servicio              |
-| `title`       | string   | Nombre del servicio                |
-| `description` | string   | Descripción breve (max ~200 chars) |
-| `image`       | string   | URL de imagen representativa       |
-| `category`    | string   | Badge de categoría                 |
+| Prop          | Tipo   | Descripción                        |
+|---------------|--------|------------------------------------|
+| `id`          | number | ID único del servicio              |
+| `title`       | string | Nombre del servicio                |
+| `description` | string | Descripción breve (max ~200 chars) |
+| `image`       | string | URL de imagen representativa       |
+| `category`    | string | Badge de categoría                 |
 
 ---
 
 ### `<TestimonialsCarousel />`
 
-Carrusel de testimonios con Swiper. Responsive (1/2/3 slides) y accesible.
+Carrusel de testimonios con Swiper. Responsive (1/2/3 slides), accesible y con autoplay.
 
 ```jsx
 import TestimonialsCarousel from './components/ui/TestimonialsCarousel'
@@ -154,9 +157,48 @@ import ContactForm from './components/ui/ContactForm'
 
 ---
 
+### `<AnimatedCounter />`
+
+Contador numérico animado que se activa al entrar en el viewport.
+
+```jsx
+import AnimatedCounter from './components/ui/AnimatedCounter'
+
+<AnimatedCounter to={1200} suffix="+" duration={2000} />
+```
+
+**Props:**
+
+| Prop       | Tipo   | Default | Descripción              |
+|------------|--------|---------|--------------------------|
+| `to`       | number | —       | Valor final del contador |
+| `prefix`   | string | `''`    | Texto antes del número   |
+| `suffix`   | string | `''`    | Texto después del número |
+| `duration` | number | `2000`  | Duración en ms           |
+
+---
+
+### `<OptimizedImage />`
+
+Imagen con lazy loading, skeleton animado y fallback en caso de error.
+
+```jsx
+import OptimizedImage from './components/ui/OptimizedImage'
+
+<OptimizedImage
+  src="https://url-imagen.jpg"
+  alt="Descripción de la imagen"
+  width={600}
+  height={400}
+  priority={false}
+/>
+```
+
+---
+
 ### `useFetch(fetchFn, deps?)`
 
-Hook genérico para consumir la API.
+Hook genérico para consumir la API con manejo de estados loading y error.
 
 ```jsx
 import { useFetch } from '../hooks/useFetch'
@@ -169,13 +211,16 @@ const { data, loading, error } = useFetch(servicesAPI.getAll)
 
 ## 🔌 API Endpoints (JSON Server)
 
-| Método | Endpoint         | Descripción              |
-|--------|------------------|--------------------------|
-| GET    | `/services`      | Lista de servicios        |
-| GET    | `/services/:id`  | Servicio por ID           |
-| GET    | `/testimonials`  | Lista de testimonios      |
-| GET    | `/faqs`          | Preguntas frecuentes      |
-| GET    | `/team`          | Miembros del equipo       |
+| Método | Endpoint        | Descripción           |
+|--------|-----------------|-----------------------|
+| GET    | `/services`     | Lista de servicios    |
+| GET    | `/services/:id` | Servicio por ID       |
+| GET    | `/testimonials` | Lista de testimonios  |
+| GET    | `/faqs`         | Preguntas frecuentes  |
+| GET    | `/team`         | Miembros del equipo   |
+| POST   | `/services`     | Crear nuevo servicio  |
+| PUT    | `/services/:id` | Editar servicio       |
+| DELETE | `/services/:id` | Eliminar servicio     |
 
 ---
 
@@ -200,9 +245,18 @@ const { data, loading, error } = useFetch(servicesAPI.getAll)
 
 ---
 
-## 👥 Equipo
+## ⚡ Rendimiento
 
-Proyecto desarrollado individual para la asignatura **Desarrollo Frontend** del Instituto Profesional San Sebastián.
+- **React.lazy + Suspense** para code splitting por ruta
+- **Lazy loading** de imágenes con `loading="lazy"` y `decoding="async"`
+- **IntersectionObserver** para animaciones on-scroll
+- **Autoplay con pausa** al hover en carrusel
+
+---
+
+## 👤 Autor
+
+Proyecto desarrollado individualmente por **Ezequiel Tobar** para la asignatura **Desarrollo Frontend** del Instituto Profesional San Sebastián.
 
 ---
 
